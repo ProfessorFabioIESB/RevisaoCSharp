@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public struct FichaDePersonagem{
     public string nome;
@@ -13,6 +14,8 @@ public struct FichaDePersonagem{
 
 public class Teste : MonoBehaviour
 {
+    public GameObject cakePrefab;
+    private float cakePosition = 1;
     public float timer = 0;
     public float timeToReload = 1;
     public int q;
@@ -25,6 +28,9 @@ public class Teste : MonoBehaviour
     public Dictionary<string,int> enemys = new Dictionary<string, int>();
     public enum Naipes{OUROS=10,COPAS=20,ESPADAS=30,PAUS=40}
     FichaDePersonagem f;
+
+    public UnityEvent Disappear;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -156,6 +162,7 @@ public class Teste : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         timer += Time.deltaTime;
         //Debug.Log(timer);
         if(timer >= timeToReload){
@@ -163,5 +170,32 @@ public class Teste : MonoBehaviour
            q++;
            timer = 0;
         }
+        */
+        /*
+        if(Input.GetAxis("Horizontal") > 0){
+            Debug.Log("DIREITA!");
+        }
+        if(Input.GetAxis("Horizontal") < 0){
+            Debug.Log("ESQUERDA!");
+        }
+        */
+
+        if(Input.GetKeyDown(KeyCode.E)){
+           Disappear.Invoke();
+        }
+    }
+
+    public void BakeCake(){
+        GameObject copia = Instantiate(cakePrefab, transform.position, Quaternion.identity); 
+        copia.name = "Cake";
+        //copia.GetComponent<Rigidbody>().useGravity = false;
+        copia.transform.position = new Vector3(transform.position.x -2*cakePosition, 
+        transform.position.y, transform.position.z);
+        cakePosition++;
+        Disappear.Invoke();
+    }
+
+    public void ResetCakePosition(){
+        cakePosition = 1;
     }
 }
