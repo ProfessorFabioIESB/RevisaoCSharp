@@ -154,9 +154,25 @@ public class Teste : MonoBehaviour
         Debug.Log(enemys.Count);
         Debug.Log(enemys.ContainsKey("Beholder"));
         */
+        /*
         f.nome = "Kleber";
         f.hp = 100;
         f.Mostrar();
+        */
+        /*
+        //Car carro1 = new Car();
+        Vehicle carro1 = new Car();
+        carro1.MostraInfo();
+
+        Car.Capotar();
+        Car.cor = "BLUE";
+        */
+
+        //GameObject.FindObjectOfType<GameManager>().score++;
+        GameManager.Instance.score++;
+        GameManager.Instance.MostrarScore();
+
+      
     }
 
     // Update is called once per frame

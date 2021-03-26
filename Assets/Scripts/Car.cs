@@ -2,43 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Car : MonoBehaviour
+public class Car : Vehicle
 {
-    public float velocidadeMaxima;
-    public float potencia;
-    public float peso;
-    public int portas;
-    public int passageiros;
-    public string combustivel;
-    public string marca;
-    public string modelo;
-    public bool conversivel;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public bool automatico = true;
+    public static string cor = "RED";
+    public Car(){
+        marca = "Ford";
+        modelo = "KA";
+        velocidadeMax = 220;
+        automatico =  true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public override void MostraInfo(){
+        Vehicle v = new Vehicle();
+        v.MostraInfo();
+        Debug.Log("Automatico: "+automatico);
     }
 
-    void Acelerar(){
-       
-    }
-
-    void Frear(){
-
-    }
-
-    void TrocarMarcha(int m){
-        
-    }
-
-    void Capotar(){
-
+    public static void Capotar(){
+        Debug.Log("CAPOTANDO  TODOS OS  CARROS");
     }
 }
