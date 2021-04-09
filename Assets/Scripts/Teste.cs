@@ -169,10 +169,14 @@ public class Teste : MonoBehaviour
         */
 
         //GameObject.FindObjectOfType<GameManager>().score++;
-        GameManager.Instance.score++;
-        GameManager.Instance.MostrarScore();
+        //GameManager.Instance.score++;
+        //GameManager.Instance.MostrarScore();
 
-      
+        ChangeColor cc;
+        cc = GameObject.FindObjectOfType<ChangeColor>().GetComponent<ChangeColor>();
+
+
+        cc.change();
     }
 
     // Update is called once per frame
