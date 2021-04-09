@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52ddb44117fa242478a3145964d32b4a, type: 3}
-  m_Name: 1
+  m_Script: {fileID: 11500000, guid: 7fec7486f7525d84d927047ddc929000, type: 3}
+  m_Name: Item2
   m_EditorClassIdentifier: 
-  cardname: GODZILLA
-  hp: 500
-  mana: 100
-  artwork: {fileID: 0}
-  attack: 700
+  itemName: Escudo de corpo
+  itemSprite: {fileID: 0}
+  itemDescription: Cobre todo o corpo e dimuniu deslocamento
+  itemDamage: 10
