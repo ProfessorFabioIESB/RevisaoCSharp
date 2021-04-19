@@ -50,5 +50,9 @@ public class Player : MonoBehaviour
             obj.TakeDamage();
             score+=10;
         }
+
+        if(other.tag == "Fire"){
+            other.GetComponent<ParticleSystem>().Play();
+        }
     }
 }
